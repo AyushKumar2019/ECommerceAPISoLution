@@ -18,8 +18,17 @@ $custom-theme: mat.define-theme();
   {
     @apply rounded-md
   }
+}
 .container {
   @apply mx-auto; // margin-left: auto; margin-right: auto;}
 }
+
+.text-primary{
+color: #7d00fa;
+
+}
+
+button.match-input-height {
+  height: var(--mat-form-field-container-height)!important;
 
 }

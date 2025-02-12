@@ -13,6 +13,9 @@ import { MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
 import { shopParams } from '../../shared/models/shopParams';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { Pagination } from '../../shared/models/Pagination';
+import { FormsModule } from '@angular/forms';
+import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 @Component({
   selector: 'app-shop',
   standalone: true,
@@ -24,7 +27,10 @@ import { Pagination } from '../../shared/models/Pagination';
     MatMenuTrigger,
     MatPaginatorModule,
     MatListOption,
-    MatSelectionList
+    MatSelectionList,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
     ],
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.scss'
@@ -64,6 +70,12 @@ this.getProducts();
       },
       error: err => console.error(err)
     });
+
+  }
+  onSearchChange()
+  {
+    this.shopParams.pageNumber = 1;
+    this.getProducts();
 
   }
 
