@@ -1,13 +1,16 @@
 <header class="border-b-2 shadow-d w-full">
   <div class="container mx-auto px-4">
     <div class="flex align-middle justify-between max-w-screen-2xl items-center mx-auto">
-      <img src="/images/logo.png" alt="logo" class="w-24 h-24">
-      <nav class="flex gap-3 my-2 uppercase font-bold text-xl">
-        <a href="/" class="mr-4">Home
+      <img routerLink="/" src="/images/logo.png" alt="logo" class="w-24 h-24">
+      <nav class="flex gap-3 my-2 uppercase font-bold text-2xl">
+        <a routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}"
+        >Home
         </a>
-        <a href="/products" class="mr-4">Shop
+        <a routerLink="/shop" routerLinkActive="active">Shop
         </a>
-        <a href="/cart">Contact
+        <a routerLink="/contact">Contact
         </a>
       </nav>
       <div class = "flex gap-3 align-middle">

@@ -20,7 +20,7 @@ $custom-theme: mat.define-theme();
   }
 }
 .container {
-  @apply mx-auto; // margin-left: auto; margin-right: auto;}
+  @apply mx-auto max-w-screen-2xl; // margin-left: auto; margin-right: auto;}
 }
 
 .text-primary{
@@ -32,3 +32,27 @@ button.match-input-height {
   height: var(--mat-form-field-container-height)!important;
 
 }
+
+.mdc-notched-outline__notch {
+ border-right-style: none !important;
+}
+
+a{
+
+  &.active{
+    color: #7d00fa;
+  }
+}
+
+.button-box {
+  display: inline-block;
+  padding: 10px;
+  color:white;
+  height: var(--mat-form-field-container-height)!important;
+  border: 2px solid black; /* Purple Border */
+  border-radius: 8px; /* Rounded Corners */
+  background-color: #7d00fa; /* Light Gray Background */
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Subtle Shadow */
+  text-align: center;
+}
+
