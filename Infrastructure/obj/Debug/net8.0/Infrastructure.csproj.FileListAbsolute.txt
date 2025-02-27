@@ -45,3 +45,5 @@ C:\Users\ayush\source\repos\AyushKumar2019\ECommerceAPISoLution\Infrastructure\o
 C:\Users\ayush\source\repos\AyushKumar2019\ECommerceAPISoLution\Infrastructure\obj\Debug\net8.0\refint\Infrastructure.dll
 C:\Users\ayush\source\repos\AyushKumar2019\ECommerceAPISoLution\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
 C:\Users\ayush\source\repos\AyushKumar2019\ECommerceAPISoLution\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll
+C:\Users\ayush\source\repos\AyushKumar2019\ECommerceAPISoLution\Infrastructure\bin\Debug\net8.0\Data\seedData\delivery.json
+C:\Users\ayush\source\repos\AyushKumar2019\ECommerceAPISoLution\Infrastructure\bin\Debug\net8.0\Data\seedData\products.json

@@ -41,10 +41,12 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+app.UseStaticFiles();
 app.UseMiddleware<ExceptionMiddleware>();
 app.UseCors(x=>x.AllowAnyHeader()
 .AllowAnyMethod().WithOrigins("https://localhost:4200", "https://localhost:4200"));
 app.MapControllers();
+app.MapFallbackToController("Index","Fallback");
 
 using (var scope = app.Services.CreateScope())
 {
