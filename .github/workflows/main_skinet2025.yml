@@ -1,3 +1,6 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
 name: Build and deploy ASP.Net Core app to Azure Web App - Skinet2025
 
 on:
@@ -10,7 +13,7 @@ jobs:
   build:
     runs-on: windows-latest
     permissions:
-      contents: read 
+      contents: read #This is required for actions/checkout
 
     steps:
       - name: Checkout Repository
@@ -22,15 +25,15 @@ jobs:
           dotnet-version: '8.x'
 
       - name: Restore Dependencies
-        run: dotnet restore ECommerceAPISoLution/ECommerceAPI/ECommerceAPI.sln
+        run: dotnet restore ECommerceAPISolution/ECommerceAPI.sln
 
       - name: Build with dotnet
-        run: dotnet build ECommerceAPISoLution/ECommerceAPI/ECommerceAPI.sln --configuration Release --no-restore
+        run: dotnet build ECommerceAPISolution/ECommerceAPI.sln --configuration Release --no-restore
 
       - name: Publish Application
-        run: dotnet publish ECommerceAPISoLution/ECommerceAPI/ECommerceAPI.sln --configuration Release --output "${{ github.workspace }}/publish"
+        run: dotnet publish ECommerceAPISolution/ECommerceAPI.sln --configuration Release --output "${{ github.workspace }}/publish"
 
-      - name: Upload Artifact for Deployment
+      - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: dotnet-app
@@ -43,16 +46,16 @@ jobs:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
-      id-token: write
-      contents: read
+      id-token: write #This is required for requesting the JWT
+      contents: read #This is required for actions/checkout
 
     steps:
-      - name: Download Artifact from Build Job
+      - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
           name: dotnet-app
           path: ${{ github.workspace }}/publish
-
+      
       - name: Login to Azure
         uses: azure/login@v2
         with:
